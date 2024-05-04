@@ -59,19 +59,10 @@ To build all available examples simply `zig build examples`. To list available e
 
 ### In an existing project (e.g. created with `zig init-exe`)
 
-Create a `build.zig.zon` and add raylib-zig as a dependency like so:
+Check tags for the latest snapshot, copy the ``tar.gz`` address, and type ``zig fetch --save`` followed by the address to add ``raylib-zig`` as a dependency. For example:
 
-```
-.{
-    // ...
-    .dependencies = .{
-        .@"raylib-zig" = .{
-            .url = "https://github.com/Not-Nik/raylib-zig/archive/devel.tar.gz",
-            .hash = "12000000000000000000000000000000000000000000000000000000000000000000", // put the actual hash here
-        },
-    },
-    // ...
-}
+```bash
+zig fetch --save https://github.com/tonytins/raylib-zig/archive/refs/tags/v5.1.103-dev.tar.gz
 ```
 
 Then add raylib-zig as a dependency and import it's modules and artifact in your `build.zig`:
